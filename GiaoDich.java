@@ -17,9 +17,10 @@ public class GiaoDich {
  private float dientich;
  
  public GiaoDich(){
-     
+     super();
  }
  public GiaoDich(String magiaodich, String ngaygiaodich,long dongia, float dientich){
+     super();
      this.magiaodich = magiaodich;
      this.ngaygiaodich = ngaygiaodich;
      this.dongia = dongia;

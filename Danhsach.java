@@ -29,7 +29,7 @@ public class Danhsach {
         
     }
     }
-    public void nhapnha(){
+    public void nhap(){
         System.out.println("Nhập số giao dịch nhà:");
         sogiaodichnha = scanner.nextInt();
         System.out.println("Nhập thông tin giao dịch nhà:");
@@ -40,7 +40,7 @@ public class Danhsach {
             arrGiaoDichNha.add(giaodichnha);
         }
     }
-    public void xuatnha(){
+    public void xuat(){
         System.out.println("Thông tin các giao dich nhà");
         for (int i = 0; i< arrGiaoDichNha.size(); i++){
             System.out.println(arrGiaoDichNha.get(i).toString());
@@ -50,7 +50,35 @@ public class Danhsach {
     void tongtien(){
         for (int i=0; i<arrGiaoDichDat.size();i++){
             if(arrGiaoDichDat.get(i).getLoaiDat().equalsIgnoreCase("A")){
-                tongtiengiaodichdat += arrGiaoDichDat.get(i).getDienTich()*arrGiaoDich
+                tongtiengiaodichdat += arrGiaoDichDat.get(i).getDienTich() * 
+                    arrGiaoDichDat.get(i).getDonGia() * 1.5;
+            } 
+            else if (arrGiaoDichDat.get(i).getLoaiDat().equalsIgnoreCase("B") || 
+                    arrGiaoDichDat.get(i).getLoaiDat().equalsIgnoreCase("C"))
+            {
+                tongtiengiaodichdat += arrGiaoDichDat.get(i).getDienTich() * 
+                    arrGiaoDichDat.get(i).getDonGia();
+            }
+        }
+        }
+        void tbinhdat() {
+        trungbinhthanhtien = tongtiengiaodichdat / (arrGiaoDichDat.size());
+        System.out.println("Trung bình thành tiền của giao dịch đất = " + trungbinhthanhtien);
+
+        // xuất ra các giao dịch của tháng 9 năm 2013
+        System.out.println("Các giao dịch đất của tháng 9 năm 2013: ");
+        for (int i = 0; i < arrGiaoDichDat.size(); i++) {
+            String[] dateGiaoDichDat = arrGiaoDichDat.get(i).getNgayGiaoDich().split("/");
+            if (dateGiaoDichDat[1].equals("9") && dateGiaoDichDat[2].equals("2013")) {
+                System.out.println(arrGiaoDichDat.get(i).toString());
+            }
+        }
+
+        System.out.println("Các giao dịch nhà của tháng 9 năm 2013: ");
+        for (int i = 0; i < arrGiaoDichNha.size(); i++) {
+            String[] dateGiaoDichNha = arrGiaoDichNha.get(i).getNgayGiaoDich().split("/");
+            if (dateGiaoDichNha[1].equals("9") && dateGiaoDichNha[2].equals("2013")) {
+                System.out.println(arrGiaoDichNha.get(i).toString());
             }
         }
     }

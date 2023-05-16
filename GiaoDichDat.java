@@ -14,7 +14,7 @@ public class GiaoDichDat extends GiaoDich {
     private String loaidat;
     
     public GiaoDichDat(){
-        
+        super();
     }
     public GiaoDichDat(String loaidat){
         super();

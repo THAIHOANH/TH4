@@ -15,7 +15,7 @@ public class GiaoDichNha extends GiaoDich {
     private String diachi;
     private  int choose;
     public GiaoDichNha(){
-        
+        super();
     }
     public GiaoDichNha(String loainha, String diachi){
         super();
